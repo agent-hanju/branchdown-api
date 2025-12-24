@@ -1,9 +1,5 @@
 # Gradle
-.gradle/
 build/
-gradle/
-gradlew
-gradlew.bat
 
 # Eclipse
 .classpath
