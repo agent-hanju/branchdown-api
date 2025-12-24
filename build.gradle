@@ -1,0 +1,48 @@
+plugins {
+  id 'java-library'
+  id 'maven-publish'
+}
+
+group = 'me.hanju'
+version = '0.2.2'
+description = 'Branchdown API DTOs'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
+  withSourcesJar()
+  withJavadocJar()
+}
+
+repositories {
+  mavenCentral()
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+
+      pom {
+        name = 'Branchdown API'
+        description = 'Branchdown API DTOs'
+        url = 'https://github.com/agent-hanju/branchdown-api'
+
+        licenses {
+          license {
+            name = 'MIT License'
+            url = 'https://opensource.org/licenses/MIT'
+          }
+        }
+
+        developers {
+          developer {
+            id = 'agent-hanju'
+            email = 'agent.hanju@gmail.com'
+          }
+        }
+      }
+    }
+  }
+}
